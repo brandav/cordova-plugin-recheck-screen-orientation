@@ -11,13 +11,38 @@
 
     <!-- ios -->
     <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="RecheckScreenOrientation">
-                <param name="ios-package" value="ALRecheckScreenOrientation"/>
-            </feature>
-        </config-file>
+           <config-file target="config.xml" parent="/*">
+                      <feature name="RecheckScreenOrientation">
+                                 <param name="ios-package" value="ALRecheckScreenOrientation"/>
+                      </feature>
+           </config-file>
 
-        <header-file src="src/ios/ALRecheckScreenOrientation.h" />
-        <source-file src="src/ios/ALRecheckScreenOrientation.m" />
-    </platform>
+           <config-file target="*-Info.plist" parent="UISupportedInterfaceOrientations" overwrite="true">
+                      <string></string>
+           </config-file>
+
+           <config-file target="*-Info.plist" parent="UISupportedInterfaceOrientations" overwrite="true"> <array>
+                      <string>UIInterfaceOrientationLandscapeLeft</string>
+
+                      <string>UIInterfaceOrientationLandscapeRight</string>
+                      </array>
+           </config-file>
+
+           <config-file target="*-Info.plist" parent="UISupportedInterfaceOrientations~ipad" overwrite="true">
+                      <string></string>
+           </config-file>
+
+           <config-file target="*-Info.plist" parent="UISupportedInterfaceOrientations~ipad" overwrite="true"> <array>
+                      <string>UIInterfaceOrientationLandscapeLeft</string>
+
+                      <string>UIInterfaceOrientationLandscapeRight</string>
+                      </array>
+
+           </config-file>
+
+
+           <header-file src="src/ios/ALRecheckScreenOrientation.h" />
+           <source-file src="src/ios/ALRecheckScreenOrientation.m" />
+     </platform>
+    
 </plugin>
